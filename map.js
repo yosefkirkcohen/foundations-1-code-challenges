@@ -65,7 +65,9 @@ Output:
 */
 
 export function makeStringArray(arr) {
-    return [];
+    return arr.map((item) => {
+        return item.name + item.type;
+    });
 }
 
 /*
@@ -91,5 +93,12 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    
+    return arr.map((item) => {
+        const newArr = ['name', item.name];
+        const otherNewArr = ['type', item.type];
+        const bigArr = [];
+        bigArr.push(newArr, otherNewArr);
+        return bigArr;
+    });
 }
