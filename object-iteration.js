@@ -45,9 +45,14 @@ export function makeMoreScreamingKeys(someObject) {
     const upperKeys = keyArr.map(key => {
         return key.toUpperCase();
     });
-    
-    newObject.(upperKeys[0]) = someObject.(keyArr[0]);
+    for(let key of upperKeys) {
+        newObject[key] = someObject[key.toLowerCase()];
+    } 
     console.log(newObject);
+    return newObject;
+    
+    
+    
 
     
     
