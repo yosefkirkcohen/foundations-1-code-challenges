@@ -50,7 +50,12 @@ Output:
 */
 
 export function organizePricesByKey(arr) {
-    return {};
+    const acc = {};
+    arr.forEach((item) => {
+        const fruitName = item.id;
+        acc[fruitName] = item.price;
+    });
+    return acc;
 }
 
 /*
@@ -90,7 +95,10 @@ Output:
 */
 
 export function makeAHashMap(arr) {
-    return {};
+    return arr.reduce((acc, item) => {
+        acc[item.id] = item;
+        return acc;
+    }, {});
 }
 
 
@@ -104,5 +112,13 @@ Output:
 */
 
 export function countByCategory(arr) {
-    return {};
+    return arr.reduce((acc, item) => {
+        if(!acc[item.category]) {
+            acc[item.category] = 1;}
+        else {
+            acc[item.category]++;
+        }
+        
+        return acc;
+    }, {});
 }

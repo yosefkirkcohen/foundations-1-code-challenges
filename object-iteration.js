@@ -48,7 +48,7 @@ export function makeMoreScreamingKeys(someObject) {
     for(let key of upperKeys) {
         newObject[key] = someObject[key.toLowerCase()];
     } 
-    console.log(newObject);
+    
     return newObject;
     
     
